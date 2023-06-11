@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Shaders/volumemapper.fsh.c</file>
+		<file>Shaders/volumemapper.vsh.c</file>	
+	</qresource>
+</RCC>
