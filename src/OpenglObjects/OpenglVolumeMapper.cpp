@@ -297,8 +297,8 @@ void OpenglVolumeMapper::initShader()
         delete mProgram;
     }
     mProgram = new QOpenGLShaderProgram;//似乎要在opengl线程创建
-    _tstring vertex =  ySingletone::get()->getConfigDir() + "Shaders/volumemapper.vsh.c";
-    //_tstring vertex = ":"+"Shaders/volumemapper.vsh.c";
+    //_tstring vertex =  ySingletone::get()->getConfigDir() + "Shaders/volumemapper.vsh.c";
+    _tstring vertex = _tstring(":")+"/Shaders/volumemapper.vsh.c";
 
     if (!mProgram->addShaderFromSourceFile(QOpenGLShader::Vertex, vertex.c_str()))
     {
@@ -306,8 +306,8 @@ void OpenglVolumeMapper::initShader()
         return;
     }
 
-    _tstring fragment = ySingletone::get()->getConfigDir() + "Shaders/volumemapper.fsh.c";
-   // _tstring fragment = ":"+"Shaders/volumemapper.fsh.c";
+    //_tstring fragment = ySingletone::get()->getConfigDir() + "Shaders/volumemapper.fsh.c";
+    _tstring fragment = _tstring(":")+"/Shaders/volumemapper.fsh.c";
     if (!mProgram->addShaderFromSourceFile(QOpenGLShader::Fragment, fragment.c_str()))
     {
         qWarning() << " add fragment shader file failed.";

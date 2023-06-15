@@ -666,7 +666,7 @@ Rectangle {
         cppProxy.registerYModule(volumeMapper.objectName)
         polyMapper.createMapper()
         cppProxy.registerYModule(polyMapper.objectName)
-        cppProxy.startCppSequence("Opengl.cfg")
+        cppProxy.startCppSequence("VolumeRender.cfg")
 
 
         var request = {}

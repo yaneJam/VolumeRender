@@ -1,7 +1,6 @@
 # VolumeRender
-make volume rendering and surface rendering together, programed by cpp ,qml,glsl and diagram
-
-cpp complied by mingw
+make volume rendering and surface rendering , programed by cpp ,qml,glsl and diagram
 
 
 ![图片](https://github.com/yaneJam/VolumeRender/raw/main/image/VolumeRender.png)
+![图片](https://github.com/yaneJam/VolumeRender/raw/main/image/Diagram.png)

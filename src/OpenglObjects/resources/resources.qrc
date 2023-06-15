@@ -2,5 +2,9 @@
     <qresource prefix="/">
         <file>Shaders/volumemapper.fsh.c</file>
 		<file>Shaders/volumemapper.vsh.c</file>	
+          <file>Shaders/slicemapper.fsh.c</file>
+		<file>Shaders/slicemapper.vsh.c</file>	
+          <file>Shaders/polymapper.fsh.c</file>
+		<file>Shaders/polymapper.vsh.c</file>	
 	</qresource>
 </RCC>

@@ -233,13 +233,16 @@ void OpenglSliceMapper::resize(int width, int height)
 
 void OpenglSliceMapper::initShader()
 {
-   _tstring vertex =  ySingletone::get()->getConfigDir() + "Shaders/slicemapper.vsh.c";
+   //_tstring vertex =  ySingletone::get()->getConfigDir() + "Shaders/slicemapper.vsh.c";
+   _tstring vertex = _tstring(":")+"/Shaders/slicemapper.ssh.c";
+
     if (!mProgram.addShaderFromSourceFile(QOpenGLShader::Vertex, vertex.c_str()))
     {
         qWarning() << " add vertex shader file failed.";
         return;
     }
-    _tstring fragment = ySingletone::get()->getConfigDir() + "Shaders/slicemapper.fsh.c";
+    //_tstring fragment = ySingletone::get()->getConfigDir() + "Shaders/slicemapper.fsh.c";
+    _tstring fragment = _tstring(":")+"/Shaders/slicemapper.fsh.c";
     if (!mProgram.addShaderFromSourceFile(QOpenGLShader::Fragment, fragment.c_str()))
     {
         qWarning() << " add fragment shader file failed.";

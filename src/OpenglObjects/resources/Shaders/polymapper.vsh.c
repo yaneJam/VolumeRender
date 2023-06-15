@@ -11,7 +11,7 @@ void main(void)
 {
     //mat4 mvMatrix = u_viewMatrix*u_modelMatrix ;
     mat4 mvMatrix = u_viewMatrix *  inverse(u_modelMatrix) ;
-    vec4 vColor = vec4(0.5, 0.0, 0.5, 1.0);
+    vec4 vColor = vec4(0.5, 0.5, 0.5, 1.0);
     mat3 mNormalMatrix;
     mNormalMatrix[0] = mvMatrix[0].xyz;
     mNormalMatrix[1] = mvMatrix[1].xyz;

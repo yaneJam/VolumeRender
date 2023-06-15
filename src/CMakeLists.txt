@@ -17,7 +17,7 @@ set(QT_VERSION_MAJOR 6)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Gui  Network Qml Quick Widgets Sql Core5Compat OpenGL QuickControls2 REQUIRED QUIET)
 
 
-set (SLN_NAME "Opengl")
+set (SLN_NAME "VolumeRender")
 set (TARGET_MACHINE "x64")
 SET_PROPERTY(GLOBAL PROPERTY USE_FOLDERS ON)
 
@@ -26,7 +26,7 @@ set(Y_BUILD_SLN CACHE STATIC INTERNAL FORCE)
 
 
 
-AddProject("${GIT_ROOT}/Opengl" OpenglObjects "Objects")
+AddProject("${GIT_ROOT}/VolumeRender" OpenglObjects "Objects")
 if(EXISTS "${CMAKE_CURRENT_LIST_DIR}/test.cmake")
 	include(test.cmake)
 endif ()
