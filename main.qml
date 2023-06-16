@@ -34,7 +34,7 @@ Rectangle {
                     onClicked:{
                         var request = {}
                         //request["filename"] = "D:/Disk/git/yardbirds/20230418/config/STL/human_head.stl"
-                        request["filename"] = cppProxy.getConfigDir()+"/STL/mask.stl"
+                        request["filename"] = cppProxy.getCurrentPluginPath()+"/data/mask.stl"
                         view.invoke("loadSTL",request);
                     }
                 }
@@ -47,7 +47,7 @@ Rectangle {
                     onClicked:{
                         var request = {}
                         //request["filename"] = "D:/Disk/git/yardbirds/20230418/config/410x410x264.raw"
-                        request["filename"] = cppProxy.getConfigDir() + "/410x410x264.raw"
+                        request["filename"] = cppProxy.getCurrentPluginPath() + "/data/410x410x264.raw"
                         request["dimX"] = 410
                         request["dimY"] = 410
                         request["dimZ"] = 264
