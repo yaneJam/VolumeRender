@@ -62,19 +62,6 @@ Rectangle {
                     onClicked:{
                     }
                 }
-                // Slider {
-                //     id: sliderid
-                // // y:resetid.height + resetid.y +  10
-                //     from: 1
-                //     value: 0
-                //     to: 10
-                //     stepSize:1
-                //     onValueChanged:{
-                //         openGLItem.ImageChanged(value)
-                //         openGLItem1.ImageChanged(value)
-                //         openGLItem2.ImageChanged(value)
-                //     }
-                // }
             }
 
         }
@@ -82,7 +69,6 @@ Rectangle {
             x:100
             height:parent.height
             width:parent.width - 100
-            //color:"black"
             color:  Qt.lighter(YConfig.themeColor , 1.2)
              //1x2
             Row{
@@ -119,7 +105,6 @@ Rectangle {
                                 property int moveState: 0
                                 property var control: parent 
                                 property var isLeftButtonPressed:false
-                                //cursorShape:  (containsMouse?(pressed?Qt.CloseHandCursor:Qt.OpenHandCursor):Qt.ArrowCursor)
                                 cursorShape: rowid.mouseStyle<2 ? (rowid.mouseStyle===1 ? Qt.IBeamCursor : Qt.OpenHandCursor) : Qt.ArrowCursor // 1-窗宽窗位，0-拖动，
                                 preventStealing: true
                                 onPressed:function(mouse){
@@ -127,21 +112,15 @@ Rectangle {
                                     lastX = mouseX
                                     lastY = mouseY
                                     if(mouse.button === Qt.LeftButton){
-                                        //console.log("Qt.LeftButton is pressed" + mouseX + " " + mouseY);
-                                        // 复原
-                                        //openGLItem.MouseLeftBtnPressed(0, 0)
                                         isLeftButtonPressed = true
                                     }
                                     else if(mouse.button === Qt.RightButton){
-                                        //console.log("Qt.RightButton is pressed" + mouseX + " " + mouseY);
                                         isLeftButtonPressed = false
                                     }
                                 }
                                 onPositionChanged:function(mouse){
                                     if(pressed && mouseX!=0 && isLeftButtonPressed) //
                                     {
-                                        //openGLItem.MouseLeftDrag(-(mouseX-lastX), mouseY-lastY);
-                                        //openGLItem.MouseLeftDrag(mouseX-lastX, mouseY-lastY);
                                         var request = {}
                                         request["value"] = -(lastX-mouseX)/5.0;
                                         request["x"] = 0.0;
@@ -158,7 +137,6 @@ Rectangle {
                                     }
                                     else if(pressed && mouseX!=0 &&!isLeftButtonPressed)
                                     {
-                                        //openGLItem.MouseRightDrag(mouseX-lastX, mouseY-lastY);
                                          var request = {}
                                         request["x"] = -(mouseX- lastX)/(openGLItem.width/2.0);
                                         request["y"] = (mouseY - lastY)/(openGLItem.width/2.0);
@@ -218,7 +196,6 @@ Rectangle {
                                     lastX = mouseX
                                     lastY = mouseY
                                     if(mouse.button === Qt.LeftButton){
-                                        //openGLItem.MouseLeftBtnPressed(0, 0)
                                         isLeftButtonPressed = true
                                     }
                                     else if(mouse.button === Qt.RightButton){
@@ -229,7 +206,6 @@ Rectangle {
                                 
                                     if(pressed &&mouseX!=0&& isLeftButtonPressed) //
                                     {       
-                                       //openGLItem1.MouseLeftDrag(mouseX-lastX, mouseY-lastY);
                                         var request = {}
                                         request["value"] = (lastX - mouseX)/5.0;
                                         request["x"] = 0.0;
@@ -245,7 +221,6 @@ Rectangle {
                                     }
                                     else if(pressed && mouseX!=0 &&!isLeftButtonPressed)
                                     {
-                                        //openGLItem1.MouseRightDrag(mouseX-lastX, mouseY-lastY);
                                          var request = {}
                                         request["x"] = -(mouseX- lastX)/(openGLItem1.width/2.0);
                                         request["y"] = (mouseY - lastY)/(openGLItem1.width/2.0);
@@ -307,7 +282,6 @@ Rectangle {
                                 lastX = mouseX
                                 lastY = mouseY
                                 if(mouse.button === Qt.LeftButton){
-                                    //openGLItem.MouseLeftBtnPressed(0, 0)
                                     isLeftButtonPressed = true
                                 }
                                 else if(mouse.button === Qt.RightButton){
@@ -317,7 +291,6 @@ Rectangle {
                             onPositionChanged:function(mouse){
                                 if(pressed &&mouseX!=0&& isLeftButtonPressed) //
                                 {
-                                    //openGLItem2.MouseLeftDrag(mouseX-lastX, mouseY-lastY);
                                      {
                                         var request = {}
                                         request["value"] = (lastX - mouseX)/5.0;
@@ -356,10 +329,8 @@ Rectangle {
 
                             onWheel:{
                                 if (wheel.angleDelta.y > 0) {
-                                    //console.log("backward")
                                     openGLItem2.ZoomOut(); 
                                 } else if (wheel.angleDelta.y < 0) {
-                                    //console.log("forward")
                                     openGLItem2.ZoomIn();
                                 }
                             }
@@ -385,9 +356,6 @@ Rectangle {
                             request["points"] = []
                             var num = 0   
 
-                            //openGLItem2.clearColorStops()
-                            //openGLItem2.addColorStop(0,"black");
-
                             request["points"][num]={}
                             request["points"][num]["pos"] = 0.0;
                             request["points"][num]["r"] = 0;
@@ -399,14 +367,12 @@ Rectangle {
                                 if(slider_root.children[i] instanceof ColorSlider)
                                 {
                                     var pos = (slider_root.children[i].x+slider_item_width) / slider_root.width
-                                    //openGLItem2.addColorStop(pos,slider_root.children[i].color);
 
                                     var r, g, b, a;
                                     r = slider_root.children[i].color.r
                                     g = slider_root.children[i].color.g
                                     b = slider_root.children[i].color.b
                                     a = slider_root.children[i].color.a
-                                    //console.log(r, g, b, a)
                                     request["points"][num]={}
                                     request["points"][num]["pos"] = pos;
                                     request["points"][num]["r"] = r;
@@ -416,7 +382,6 @@ Rectangle {
 
                                 }                                
                             }
-                            //openGLItem2.addColorStop(1,"white");
 
 
                             request["points"][num]={}
@@ -430,15 +395,12 @@ Rectangle {
 
                             var ctx = getContext("2d")
                             var gradient = ctx.createLinearGradient(0, 0, width, 0)
-                            //var table = openGLItem2.getColorTable()
                             var table = volumeMapper.getColorTable()
                             
                             for(var i = 0 ;i<(table.length/4);i++)
                             {
                                 var pos =  i /(table.length/4)
                                 var color = Qt.rgba(table[i*4],table[i*4+1],table[i*4+2],1.0)
-                                //var color = Qt.rgba(0.33, 1, 1, 0.5)
-                                //console.log(pos + ":("+color.r+","+color.g+","+color.b+","+color.a+")")
                                 gradient.addColorStop(pos, color)
                             }
                             ctx.fillStyle = gradient
@@ -528,11 +490,7 @@ Rectangle {
                             var request = {}
                             request["points"] = []
                             var num = 0             
-
-                            //openGLItem2.clearOpacityStops()
-                            //openGLItem2.addOpacityStop(1.0,0.0);
-                            
-                            
+                       
                             request["points"][num]={}
                             request["points"][num]["x"] = 1.0;
                             request["points"][num]["y"] = 0;
@@ -551,8 +509,6 @@ Rectangle {
                                     {
                                         opacity = 0 ;
                                     }
-                                    //console.log("ctvalue:" + ctvalue + " opacity:" + opacity)
-                                    //openGLItem2.addOpacityStop(ctvalue,opacity);
                                     request["points"][num]={}
                                     request["points"][num]["x"] = ctvalue;
                                     request["points"][num]["y"] = opacity;
@@ -562,7 +518,6 @@ Rectangle {
                             }
                             
 
-                            //openGLItem2.addOpacityStop(root_rect.maxCTValue,0.0);
                             request["points"][num]={}
                             request["points"][num]["x"] = root_rect.maxCTValue;
                             request["points"][num]["y"] = 0.0;
@@ -570,7 +525,6 @@ Rectangle {
                             view.invoke("setOpacity",request);
 
 
-                            //var array = openGLItem2.getOpacityTable()
                             var array = volumeMapper.getOpacityTable()
 
                             // 设置画笔颜色和宽度
