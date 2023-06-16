@@ -10,8 +10,12 @@
 提取码：oyyc 
 
 
+# 如何在我的PC电脑上运行它
+>在Windows系统中双击start.bat
+
+
 >导入VolumeRender
 点击左上方的打开按钮，注意此时代码已被导入到yane内部的路径"./lib/导入VolumeRender"
 
->运行COMAssistant
-点击左下角的Menu，然后选择COMAssisttant
+>导入VolumeRender
+点击左下角的Menu，然后选择导入VolumeRender
