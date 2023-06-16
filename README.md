@@ -17,5 +17,15 @@
 >导入VolumeRender
 点击左上方的打开按钮，注意此时代码已被导入到yane内部的路径"./lib/导入VolumeRender"
 
->导入VolumeRender
-点击左下角的Menu，然后选择导入VolumeRender
+>运行VolumeRender
+点击左下角的Menu，然后选择运行VolumeRender
+
+
+# 如何编译cpp
+>下载mingw.tools(包含了cmake Qt6.4.1 minGW等开发工具),然后覆盖到start.bat同路径下
+[百度网盘](https://pan.baidu.com/s/1FZkfjk5iucfdlIAseOLdIA)
+提取码：oyyc 
+双击lib/VolumeRender/build.bat
+或者运行Sequence打开./lib/VolumeRender/VolumerRender.ydg,然后点击build
+
+
