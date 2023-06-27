@@ -25,7 +25,7 @@ public:
     virtual void resize(int width, int height);
     //void updateTextureInfo(int width, int height, int format);
    // void updateTextureData(const YUVData& data);
-
+  
     virtual void ImageChanged(int value) {}
     virtual void AdjustifyWindows() {}
     virtual void MouseLeftBtnPressed(float x, float y) {}
@@ -43,7 +43,8 @@ public:
     bool isReset = false;
     bool isContrast = false;
     bool isDrag = false;
-
+    _tstring fragment_file ;
+    _tstring vertex_file;
     OpenglRenderer* renderer = NULL;
     QString title;
 protected:

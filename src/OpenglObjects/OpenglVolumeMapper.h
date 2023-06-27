@@ -62,7 +62,6 @@ public:
     void Contrast() override;
     void Drag() override;
 protected:
-    void initTexture()override;
     void initShader()override;
     void initGeometry()override;
 

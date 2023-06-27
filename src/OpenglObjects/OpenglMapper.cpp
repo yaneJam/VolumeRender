@@ -43,6 +43,11 @@ void OpenglMapper::setTempContext(_tsptr<yValue> context)
 {
     title = QString::fromStdString((*context)["objectName"].asString());
     yModule::setInstanceName((*context)["objectName"].asString().c_str());
+
+
+
+    fragment_file =(*context)["fragment_file"].asString().c_str();
+    vertex_file =(*context)["vertex_file"].asString().c_str();
 }
 
 void OpenglMapper::initTemp()
@@ -67,6 +72,9 @@ void OpenglMapper::resize(int width, int height)
    /* mProjectionMatrix.setToIdentity();
     mProjectionMatrix.frustum(-1.0, 1.0, bottom, top, n, f);*/
 }
+
+
+
 void OpenglMapper::initShader()
 {
    /* mProgram.addCacheableShaderFromSourceCode(QOpenGLShader::Vertex,

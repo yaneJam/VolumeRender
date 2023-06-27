@@ -8,38 +8,7 @@ cmake_minimum_required (VERSION 3.8)
 set(QTENHANCED TRUE)#HDTOOL::AddQtEnhance
 
 
-
-#MACRO_PROJECT_DLL()
-
-#target_link_libraries(${PROJECT_NAME} Qt${QT_VERSION_MAJOR}::Quick)	
-#target_link_libraries(${PROJECT_NAME} Qt${QT_VERSION_MAJOR}::QuickControls2)	
-
-#
-#set(PROJECT_OUTPUT_DIR "D:/Disk/git/testmingw/bin/x64")
-#set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG "D:/Disk/git/testmingw/bin/x64")
-#set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_RELEASE "D:/Disk/git/testmingw/bin/x64")
-#set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG "D:/Disk/git/testmingw/bin/x64")
-#set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE "D:/Disk/git/testmingw/bin/x64")
-
-
 MACRO_PROJECT_ENVIRONMENT()
-
-# set(CMAKE_BINARY_DIR "D:/Disk/git/testmingw/bin/x64")
-# set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "D:/Disk/git/testmingw/bin/x64")
-# set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "D:/Disk/git/testmingw/bin/x64")
-# set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "D:/Disk/git/testmingw/bin/x64")
-
-# include_directories("${PROJECT_SOURCE_DIR}")
-# include_directories("${PROJECT_SOURCE_DIR}/../../inc/${PROJECT_NAME}")
-# include_directories("${PROJECT_BINARY_DIR}/../../inc")
-# include_directories("${PROJECT_BINARY_DIR}")
-# include_directories("${REPOSITORY_PATH}")
-# link_directories("${PROJECT_BINARY_DIR}/../../inc")
-# link_directories("${PROJECT_BINARY_DIR}")
-# link_directories("${PROJECT_SOURCE_DIR}")
-# link_directories("${REPOSITORY_PATH}")
-
-
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)

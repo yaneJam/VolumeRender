@@ -83,12 +83,6 @@ void OpenglVolumeMapper::initTemp()
     glEnable(GL_TEXTURE_2D);
     initShader();
 
-    // static bool bOk = true;
-    // if (bOk == true)
-    // {
-    //     initTexture();
-    //     bOk = false;
-    // }
 
     if(mTexOpacity==NULL)
     {
@@ -300,14 +294,28 @@ void OpenglVolumeMapper::initShader()
     //_tstring vertex =  ySingletone::get()->getConfigDir() + "Shaders/volumemapper.vsh.c";
     _tstring vertex = _tstring(":")+"/Shaders/volumemapper.vsh.c";
 
+
+
+    if(!vertex_file.empty())
+    {
+        vertex = vertex_file;
+    }
+    DEBUG_LOG("vertex:%s",vertex.c_str());
+
     if (!mProgram->addShaderFromSourceFile(QOpenGLShader::Vertex, vertex.c_str()))
     {
         qWarning() << " add vertex shader file failed.";
         return;
     }
-
+    
     //_tstring fragment = ySingletone::get()->getConfigDir() + "Shaders/volumemapper.fsh.c";
     _tstring fragment = _tstring(":")+"/Shaders/volumemapper.fsh.c";
+
+    if(!fragment_file.empty())
+    {
+        fragment = fragment_file;
+    }
+    DEBUG_LOG("fragment:%s",fragment.c_str());
     if (!mProgram->addShaderFromSourceFile(QOpenGLShader::Fragment, fragment.c_str()))
     {
         qWarning() << " add fragment shader file failed.";
@@ -320,34 +328,6 @@ void OpenglVolumeMapper::initShader()
 }
 
 
-void OpenglVolumeMapper::initTexture()
-{
-    // if (mTex3D == NULL)
-    // {
-    //     mTex3D = new QOpenGLTexture(QOpenGLTexture::Target3D);
-    //     mTex3D->setFormat(QOpenGLTexture::LuminanceFormat);
-    //     //    mTexV->setFixedSamplePositions(false);
-    //     mTex3D->setMinificationFilter(QOpenGLTexture::Nearest);
-    //     mTex3D->setMagnificationFilter(QOpenGLTexture::Nearest);
-    //     mTex3D->setWrapMode(QOpenGLTexture::ClampToBorder);
-
-
-    //     // mTex2D = new QOpenGLTexture(QOpenGLTexture::Target2D);
-    //     // // //mTex2D->setFormat(QOpenGLTexture::RGBAFormat);//纹理内部的格式，就是说显存里边数据的格式
-    //     // // //    mTexV->setFixedSamplePositions(false);
-    //     // // mTex2D->setMinificationFilter(QOpenGLTexture::Nearest);
-    //     // // mTex2D->setMagnificationFilter(QOpenGLTexture::Nearest);
-    //     // // mTex2D->setWrapMode(QOpenGLTexture::ClampToBorder);
-
-    //     // //mTex2D->create();
-    //     // //mTex2D->allocateStorage(QOpenGLTexture::PixelFormat::RGBA, QOpenGLTexture::PixelType::UInt8);
-    //     // QImage image("D:/Disk/git/yardbirds/20230418/config/test_texture.png");
-    //     // DEBUG_LOG("[%d,%d]",image.width(),image.height());
-    //     // mTex2D->setData(image);
-
-    //     updateTextureInfo(256, 256, QOpenGLTexture::Red);
-    // }   
-}
 
 void OpenglVolumeMapper::updateTextureInfo(int width, int height, int format)
 {

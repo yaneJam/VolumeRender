@@ -96,15 +96,21 @@ void OpenglPolyMapper::initShader()
     mProgram = new QOpenGLShaderProgram;
    //_tstring vertex =  ySingletone::get()->getConfigDir() + "Shaders/polymapper.vsh.c";
     _tstring vertex = _tstring(":")+"/Shaders/polymapper.vsh.c";
-
+    if(!vertex_file.empty())
+    {
+        vertex = vertex_file;
+    }
     if (!mProgram->addShaderFromSourceFile(QOpenGLShader::Vertex, vertex.c_str()))
     {
-        qWarning() << " add vertex shader file failed. d d df d fd fd ";
+        qWarning() << " add vertex shader file failed. ";
         return;
     }
     //_tstring fragment = ySingletone::get()->getConfigDir() + "Shaders/polymapper.fsh.c";
     _tstring fragment = _tstring(":")+"/Shaders/polymapper.fsh.c";
-
+    if(!fragment_file.empty())
+    {
+        fragment = fragment_file;
+    }
     if (!mProgram->addShaderFromSourceFile(QOpenGLShader::Fragment, fragment.c_str()))
     {
         qWarning() << " add fragment shader file failed.fd fd df df ";

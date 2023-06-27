@@ -96,6 +96,8 @@ Rectangle {
                                 id:volumeMapper2
                                 property var objectName:"volumeMapper2"
                                 property var mapperType:"OpenglVolumeMapper"   
+                                property var fragment_file:  cppProxy.getCurrentPluginPath()  +"/Shaders/volumemapper.fsh.c"
+                                property var vertex_file: cppProxy.getCurrentPluginPath()+"/Shaders/volumemapper.vsh.c"
                             }
                             MouseArea{
                                 anchors.fill: parent
@@ -179,6 +181,9 @@ Rectangle {
                                 id:polyMapper2
                                 property var objectName:"polyMapper2"
                                 property var mapperType:"OpenglPolyMapper"
+                                
+                                 property var fragment_file:  cppProxy.getCurrentPluginPath()  +"/Shaders/polymapper.fsh.c"
+                                property var vertex_file: cppProxy.getCurrentPluginPath()+"/Shaders/polymapper.vsh.c"
                             }
 
                             MouseArea{
@@ -257,7 +262,9 @@ Rectangle {
                         {
                             id:volumeMapper
                             property var objectName:"volumeMapper"
-                            property var mapperType:"OpenglVolumeMapper"                   
+                            property var mapperType:"OpenglVolumeMapper"      
+                            property var fragment_file:  cppProxy.getCurrentPluginPath()  +"/Shaders/volumemapper.fsh.c"
+                            property var vertex_file: cppProxy.getCurrentPluginPath()+"/Shaders/volumemapper.vsh.c"          
                         }
 
                         MapperItem
@@ -265,6 +272,8 @@ Rectangle {
                             id:polyMapper
                             property var objectName:"polyMapper"
                             property var mapperType:"OpenglPolyMapper"
+                            property var fragment_file:  cppProxy.getCurrentPluginPath()  +"/Shaders/polymapper.fsh.c"
+                            property var vertex_file: cppProxy.getCurrentPluginPath()+"/Shaders/polymapper.vsh.c"
                         }
 
                         MouseArea{

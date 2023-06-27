@@ -35,6 +35,8 @@ MapperItem::~MapperItem()
     }
 }
 
+
+
 QVariantList MapperItem::getHistTable()
 {
     QVariantList  testba; 
@@ -113,6 +115,8 @@ void MapperItem::createMapper()
    
     QString objectName = property("objectName").toString();
     QString mapperType = property("mapperType").toString();
+    QString fragment_file = property("fragment_file").toString();
+    QString vertex_file = property("vertex_file").toString();
 
     if(!objectName.isEmpty())
     {
@@ -135,6 +139,9 @@ void MapperItem::createMapper()
             cmd->method = "addMapper";
             (*cmd->request)["objectName"] = objectName.toStdString();
             (*cmd->request)["mapperType"] = mapperType.toStdString();
+            (*cmd->request)["fragment_file"] = fragment_file.toStdString();
+            (*cmd->request)["vertex_file"] = vertex_file.toStdString();
+
             osg_parent->m_current_layer->addMapper(cmd);//注意这里不是opengl线程
 
            m_mapper = osg_parent->m_current_layer->newest_mapper;
